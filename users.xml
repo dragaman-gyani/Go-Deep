@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users>
+  <user id="demo@clash.gyan">
+    <name>Demo User</name>
+    <email>demo@clash.gyan</email>
+    <avatar>assets/avatar-placeholder.xml</avatar>
+    <dob>1990-01-01</dob>
+    <channel>
+      <url>demo-channel</url>
+      <name>Demo Channel</name>
+      <handle>demo</handle>
+      <desc>Demo channel</desc>
+    </channel>
+  </user>
+</users>
