@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="36" viewBox="0 0 120 36">
+  <rect rx="8" width="36" height="32" x="0" y="2" fill="#1ea7ff"/>
+  <polygon points="14,12 26,18 14,24" fill="#012"/>
+  <text x="48" y="22" font-family="Segoe UI, Roboto, Arial" font-size="16" fill="#fff" font-weight="700">Go‑Deep</text>
+</svg>
