@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Go‑Deep — Search & AI</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand-left">
+      <img id="logo" src="" alt="Go-Deep Logo" class="logo">
+      <div class="brand-name">Go‑Deep</div>
+    </div>
+
+    <div class="search-area">
+      <input id="searchInput" placeholder="Search Go‑Deep (wiki, web, @handle) — press Enter" />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div class="top-right">
+      <button id="aiBtn" class="icon-btn" title="Open AI">AI</button>
+      <div id="profileWrap" class="profile" title="Account">
+        <img id="profileIcon" src="" alt="profile">
+        <span id="profileName">Guest</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <ul>
+        <li data-route="home" class="active">Home</li>
+        <li data-route="search">Search</li>
+        <li data-route="ai">AI Chat</li>
+        <li data-route="contribute">Contributions</li>
+        <li data-route="account">Account</li>
+        <li data-route="settings">Settings</li>
+      </ul>
+    </aside>
+
+    <main id="view" class="view">
+      <!-- Dynamic content rendered here -->
+      <div class="panel" id="welcomePanel">
+        <h2>Welcome to Go‑Deep</h2>
+        <p class="muted">Search Wikipedia-like exact info, add contributions (18+ only), and chat with AI.</p>
+      </div>
+    </main>
+  </div>
+
+  <!-- Login/Signup Modal -->
+  <div id="authModal" class="modal hidden">
+    <div class="modal-inner">
+      <h3>Sign in / Create account</h3>
+
+      <div id="authTabs">
+        <button id="tabSign" class="tab active">Sign In</button>
+        <button id="tabCreate" class="tab">Create</button>
+      </div>
+
+      <form id="signForm" class="auth-form">
+        <label>Email (must end with @clash.gyan)
+          <input id="signEmail" type="email" placeholder="you@clash.gyan" required>
+        </label>
+        <label>Password
+          <input id="signPassword" type="password" required>
+        </label>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button type="button" id="signInBtn">Sign In</button>
+          <button type="button" id="openCreateBtn">Go to Create</button>
+        </div>
+        <div id="signMsg" class="muted"></div>
+      </form>
+
+      <form id="createForm" class="auth-form hidden">
+        <label>Name
+          <input id="createName" placeholder="Your name" required>
+        </label>
+        <label>Email (end with @clash.gyan)
+          <input id="createEmail" type="email" placeholder="you@clash.gyan" required>
+        </label>
+        <label>Password
+          <input id="createPassword" type="password" required>
+        </label>
+        <label>Confirm Password
+          <input id="createConfirm" type="password" required>
+        </label>
+        <label>Date of Birth
+          <input id="createDob" type="date" required>
+        </label>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button type="button" id="createAccountBtn">Create Account</button>
+          <button type="button" id="backSignBtn">Back</button>
+        </div>
+        <div id="createMsg" class="muted"></div>
+      </form>
+
+      <div style="display:flex;justify-content:flex-end;margin-top:8px">
+        <button id="closeAuth">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Contribution Modal -->
+  <div id="contribModal" class="modal hidden">
+    <div class="modal-inner">
+      <h3>Add Information (18+ only)</h3>
+      <label>Title<input id="contribTitle"></label>
+      <label>Content<textarea id="contribContent"></textarea></label>
+      <label>Source (URL, optional)<input id="contribSource"></label>
+      <div style="display:flex;gap:8px;justify-content:flex-end">
+        <button id="contribAddBtn">Add</button>
+        <button id="contribCancelBtn">Cancel</button>
+      </div>
+      <div id="contribMsg" class="muted"></div>
+    </div>
+  </div>
+
+  <!-- AI Chat Page template (rendered in view) -->
+  <template id="aiChatTpl">
+    <div class="panel">
+      <h3><img src="" id="aiIconInline" style="width:20px;height:20px;margin-right:8px;vertical-align:middle"> Go‑Deep AI Chat</h3>
+      <div id="aiChatWindow" class="ai-chat"></div>
+      <div class="ai-input">
+        <input id="aiInput" placeholder="Ask the AI...">
+        <button id="aiSendBtn">Send</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Search result template -->
+  <template id="searchResultTpl">
+    <div class="result-block">
+      <div class="info-header special-info">Information by Gyan Technology</div>
+      <h3 class="res-title"></h3>
+      <div class="res-snippet muted"></div>
+      <div class="res-source muted"></div>
+      <div style="margin-top:6px;">
+        <button class="reportBtn">Report</button>
+        <button class="deleteBtn hidden">Delete (if yours)</button>
+      </div>
+    </div>
+  </template>
+
+  <!-- Assets and scripts -->
+  <script src="scripts/assets.js"></script>
+  <script src="scripts/data.js"></script>
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/search.js"></script>
+  <script src="scripts/worker.js"></script>
+  <script src="scripts/ai.js"></script>
+  <script src="scripts/chat.js"></script>
+  <script src="scripts/router.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
